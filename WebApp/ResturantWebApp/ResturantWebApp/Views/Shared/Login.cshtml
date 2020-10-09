@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{ResturantWebApp.Models.User usr = DAL.GetUserForCookie(Context.Request.Cookies["user"]);}
+
+@if (usr == null)
+{
+    <div class="model-content">
+        <form action="Login" method="post">
+            <h1 class="loginHeader">Login</h1>
+            <div class="inputForm">
+                <div>
+                    <input id="txtUserName" value="ad@gmail.com" type="text" placeholder="Email" name="username" />
+                </div>
+                <div>
+                    <input id="txtPassword" value="password" type="password" placeholder="Password" name="password" />
+                </div>
+                <div>
+                    <input id="btnLogin" type="submit" value="Login In" />
+                </div>
+                <input id="chkRememberMe" type="checkbox"  />
+            </div>
+
+            <div class="login-help">
+                <p>Do not have an account? Register Here!</p>
+                <a asp-action="Registration" asp-controller="User">Register</a>
+            </div>
+        </form>
+    </div>
+}
+else
+{
+    <span>Hello, @usr.FullName <a asp-action="Logout" asp-controller="User">Sign Out</a></span>
+}

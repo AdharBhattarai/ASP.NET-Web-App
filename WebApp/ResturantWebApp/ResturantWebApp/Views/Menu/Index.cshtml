@@ -1,0 +1,98 @@
+﻿@model IEnumerable<ResturantWebApp.Models.Menu>
+@{ResturantWebApp.Models.User usr = DAL.GetUserForCookie(Context.Request.Cookies["user"]);}
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="menuIndex">
+    <h1>Menu</h1>
+    <div>
+        @if (usr != null)
+        {
+            @if (usr.Role.CategoryEdit)
+            {
+                <div class="goButton">
+                    <a id="viewButton" asp-action="Create">Create New</a>
+                </div>
+            }
+        }
+        <ul>
+            <li><a href="?page=1&count=2"> Show Pages (2 per page)</a></li>
+            <li><a href="?page=1&count=3"> Show Pages (3 per page)</a></li>
+            <li><a href="?page=1&count=4"> Show Pages (4 per page)</a></li>
+        </ul>
+
+        @*@foreach (var item in ViewBag.CategoryID)
+            {
+                <div class="">
+                    <label class="">Sort By:</label>
+                    <select class="" value="item.CategoryID">@item.Name</select>
+                </div>
+            }*@
+        @foreach (Category cat in ViewBag.Menu)
+        {
+            <div class="categoryName">
+
+                @Html.DisplayFor(model => cat.Name)
+            </div>
+            <div class="flex-container">
+
+                @foreach (var item in cat.Menus)
+                {
+                    <div class="menuContainer">
+                        <div class="menuContent">
+                            <div class="menuName"> @Html.DisplayFor(model => item.Name)</div>
+                            <div class="menuPrice">$@Html.DisplayFor(model => item.Price)</div>
+                            <div class="menuDescription">@Html.DisplayFor(model => item.Description)</div>
+                            @if (usr != null)
+                            {
+                                @if (usr.Role.CategoryEdit)
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                                    @*<a asp-action="Delete" asp-route-id="@item.ID">Delete</a>*@
+                                }
+                            }
+                            <button data-id="@item.ID" class="addToCart">Add To Cart</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    <partial name="Page" model="ViewBag.Pager" />
+
+    <div class="cartSystem">
+        <div class="cartContent">
+            <h2 class="headCart">Cart</h2>
+
+            <ul id="cart">
+
+                @foreach (MenuOrder menuInCart in ViewBag.InCart)
+                {
+                    <li>@menuInCart.Menu.Name</li>
+                    <li>
+                        Quantity - <input class="quantity_product" data-id="@menuInCart.Menu.ID" type="number" value="@menuInCart.Quantity" min="1" , max="9" />
+                    </li>
+                    @*<li>@ViewData[menuInCart.ID.ToString()]</li>*@
+                }
+            </ul>
+            @if (ViewData["TotalPrice"] != null)
+            {
+
+                <div class="totalPrice"><span>Total Amount:</span>$@ViewData["TotalPrice"] </div>
+            }
+
+        </div>
+
+
+        @if (usr == null)
+        {
+            <a class="btnLogin" asp-controller="User"
+               asp-action="Login">Login</a>
+        }
+        else
+        {
+            <button class="proceed_to_checkout">Order Now!</button>
+        }
+    </div>
+</div>

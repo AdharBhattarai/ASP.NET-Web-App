@@ -1,0 +1,48 @@
+﻿@model ResturantWebApp.Models.Menu
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="createMenu">
+    <h1>Menu</h1>
+    <h2 id="createTitle">Create a new menu item here.</h2>
+    <div class="">
+        <div class="">
+            <form asp-action="Create">
+                <div class="">
+                    <input type="button" value="Save Draft" class="btnSaveDraft" />
+                </div>
+                <div asp-validation-summary="ModelOnly" class=""></div>
+                <div class="">
+                    <label asp-for="Name" class=""></label>
+                    <input asp-for="Name" class="menuName" />
+                    <span asp-validation-for="Name" class=""></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class=""></label>
+                    <input asp-for="Price" class="menuPrice" />
+                    <span asp-validation-for="Price" class=""></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class=""></label>
+                    <input asp-for="Description" class="menuDescription" />
+                    <span asp-validation-for="Description" class=""></span>
+                </div>
+                <div class="">
+                    <label asp-for="CategoryID" class="">Category of the Item:</label>
+                    <select asp-for="CategoryID" class="" asp-items="ViewBag.CategoryID"></select>
+                </div>
+                <div class="">
+                    <input type="submit" value="Create" class="" />
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    <a id="btnBack" asp-action="Index">Back to List</a>
+</div>
+

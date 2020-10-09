@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ResturantWebApp.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="categoryContainer">
+
+    <h1>Index</h1>
+
+    <div class="goButton">
+        <a id="viewButton" asp-action="Create">Create New</a>
+    </div>
+    <ul>
+        <li><a href="?page=1&count=2"> Show Pages (2 per page)</a></li>
+        <li><a href="?page=1&count=3"> Show Pages (3 per page)</a></li>
+        <li><a href="?page=1&count=4"> Show Pages (4 per page)</a></li>
+    </ul>
+
+    <table id="categoryTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                <p>Actions</p>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
+
+
+
+<partial name="Page" model="ViewBag.Pager" />
+

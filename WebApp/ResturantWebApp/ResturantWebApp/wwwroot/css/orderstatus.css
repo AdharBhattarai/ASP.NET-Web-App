@@ -1,0 +1,58 @@
+﻿.orderStatusContainer {
+    color: #ddaa44;
+    text-align: center;
+    font-weight: bolder;
+    font-variant-caps: all-petite-caps;
+}
+
+.orderStatus {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    font-size: larger;
+    margin-top: 50px;
+}
+
+
+    .orderStatus td, .orderStatus th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .orderStatus tr:nth-child(odd) {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .orderStatus tr:nth-child(even) {
+        background-color: #000000;
+        color: #FFF;
+    }
+
+    .orderStatus th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #b48608;
+        color: white;
+    }
+
+
+
+    .orderStatus a {
+        background-color: #ddaa44;
+        padding: 5px 17px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .orderStatus ul {
+        list-style: none;
+    }
+
+
+    .orderStatus a:hover {
+        background-color: grey;
+    }

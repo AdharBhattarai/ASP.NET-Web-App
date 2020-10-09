@@ -1,0 +1,28 @@
+﻿@model List<ResturantWebApp.Models.Menu>
+@{ResturantWebApp.Models.User usr = DAL.GetUserForCookie(Context.Request.Cookies["user"]);}
+
+@{
+}
+
+@foreach (Menu categoryInCart in Model)
+{
+    <li>
+        @categoryInCart.Name - <input type="number" style="" />
+        @categoryInCart.Price
+    </li>
+}
+
+
+Total : @Model.Sum(x => x.Price)
+
+@if (usr == null)
+{
+    <li>
+        <a class="" id="">Login</a>
+    </li>
+    <partial name="Login" />
+}
+else
+{
+    <button class="proceed_to_checkout">Checkout</button>
+}

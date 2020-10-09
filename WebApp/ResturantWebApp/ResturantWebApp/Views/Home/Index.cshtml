@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="mainContainer">
+    <div class="background">
+        <h1>the himalayan flames</h1>
+        <p>Modern Indian, Nepali and Tibetan cuisine</p>
+        <p>Opens Every Day</p>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img alt="Interior of Resturant" src="~/images/interior.jpg">
+            <div class="text">Interior</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img alt="Butter Chicken" src="~/images/butterchicken.jpg">
+            <div class="text">Butter Chicken</div>
+        </div>
+
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+
+    <div class="mainExtra">
+        <div>
+            <h3>Contact</h3>
+            <p>CALL NOW AT (313) 908-1193 </p>
+        </div>
+        <div>
+            <h3>Address</h3>
+            <ul>
+                <li>22266 Michigan Avenue</li>
+                <li>Dearborn, MI 48124</li>
+                <li>United States</li>
+            </ul>
+        </div>
+        <div class="businessHours">
+            <h3>Business Hours</h3>
+            <p>
+                <ul>
+                    <li>Mon:	11:00 AM – 3:00 PM, 5:00 – 10:00 PM</li>
+                    <li>Tue:	11:00 AM – 3:00 PM, 5:00 – 10:00 PM</li>
+                    <li>Wed:	11:00 AM – 3:00 PM, 5:00 – 10:00 PM</li>
+                    <li>Thu:	11:00 AM – 3:00 PM, 5:00 – 10:00 PM</li>
+                    <li>Fri:	11:00 AM – 3:00 PM, 5:00 – 10:00 PM</li>
+                    <li>Sat:	11:00 AM – 3:00 PM, 5:00 – 10:00 PM</li>
+                    <li>Sun:	12:00 – 3:00 PM, 5:00 – 9:00 PM</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="goButton">
+    <a id="viewButton" asp-controller="Menu" asp-action="Index">View Menu</a>
+</div>

@@ -1,0 +1,98 @@
+﻿.categoryContainer h1 {
+    color: #ddaa44;
+    font-family: 'Architects Daughter', sans-serif;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 5px;
+    font-weight: bolder;
+    font-variant-caps: all-petite-caps;
+}
+#nameMenu{
+    font-size:larger;
+    color: brown;
+}
+
+.categoryContainer h3 {
+    font-family: 'Original Surfer', cursive;
+    text-align: center;
+    color: #FFF;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#categoryTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 80%;
+    font-size: larger;
+    margin-top: 50px;
+}
+
+    #categoryTable td, #categoryTable th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #categoryTable tr:nth-child(odd) {
+        background-color: #fff;
+        color: #000;
+    }
+
+    #categoryTable tr:nth-child(even) {
+        background-color: #000000;
+        color: #FFF;
+    }
+
+    #categoryTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #b48608;
+        color: white;
+    }
+
+
+
+.categoryContainer a {
+    background-color: #ddaa44;
+    padding: 5px 17px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+    .categoryContainer a:hover {
+        background-color: grey;
+    }
+
+
+.inputForm input[type=text], .inputForm input[type=password] {
+    height: 44px;
+    font-size: 16px;
+    margin: 6px;
+    background-color: #4e2e10;
+    border: 1px solid #d9d9d9;
+    padding: 2px 8px;
+    color: #fff;
+}
+
+.inputForm label {
+    font-size: large;
+    padding: 20px;  
+
+}
+
+#btnSave {
+    padding: 10px;
+}
+
+    #btnSave input {
+        padding: 10px;
+        margin-left: 120px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: large;
+    }

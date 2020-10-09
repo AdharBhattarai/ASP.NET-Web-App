@@ -1,0 +1,84 @@
+﻿
+.loginHeader {
+    text-align: center;
+    font-size: 1.8em;
+    padding: 10px 0;
+    margin-right: 100px;
+}
+
+.model-content {
+    display: flex;
+    margin-top: 10%;
+    align-content: center;
+    flex-flow: column wrap;
+    background: #B29772;
+}
+
+
+.inputForm input[type=text], .inputForm input[type=password] {
+    height: 44px;
+    font-size: 16px;
+    margin: 6px;
+    background-color: #4e2e10;
+    border: 1px solid #d9d9d9;
+    padding: 2px 8px;
+    color: #fff;
+}
+
+#btnLogin {
+    padding: 10px;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+    margin: 10px;
+}
+
+
+    #btnLogin:hover {
+        background-color: #808080;
+    }
+
+.login-help {
+    margin: 7px;
+    font-size: large;
+}
+
+    .login-help a:hover {
+        color: #4e2e10;
+        font-weight: bold;
+    }
+
+
+.form-group {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+}
+
+    .form-group > label {
+        padding: .5em 1em .5em 0;
+        flex: 1;
+    }
+
+    .form-group > input {
+        flex: 2;
+    }
+
+    .form-group > span {
+        display: block;
+        color: #fff;
+        font-size: large;
+    }
+
+    .form-group > input,
+    .form-group > input[type=submit] {
+        padding: .5em;
+        text-align: center;
+        font-weight: bolder;
+        color: #FFF;
+        padding: 10px;
+        margin: 8px;
+        background: #4e2e10;
+    }
+
+

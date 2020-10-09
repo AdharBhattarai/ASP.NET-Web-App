@@ -1,0 +1,40 @@
+﻿@model ResturantWebApp.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="categoryContainer">
+    <h1>Edit</h1>
+    <h3>Edit the category with a new one.</h3>
+    <div class="model-content">
+
+        <div class="inputForm">
+
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class=""></div>
+                <input type="hidden" asp-for="ID" />
+                <div class="form-group">
+                    <label asp-for="Name" class=""></label>
+                    <input asp-for="Name" class="" />
+                    <span asp-validation-for="Name" class=""></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class=""></label>
+                    <input asp-for="Description" class="" />
+                    <span asp-validation-for="Description" class=""></span>
+                </div>
+                <div class="btnSave">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>  
+
+<div class="goButton">
+    <a id="viewButton" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

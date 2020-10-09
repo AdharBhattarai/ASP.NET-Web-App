@@ -1,0 +1,220 @@
+﻿.menuIndex h1 {
+    color: #ddaa44;
+    font-family: 'Architects Daughter',sans-serif;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 2px;
+    font-weight: bolder;
+    font-variant-caps: all-petite-caps;
+}
+
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+    .flex-container > div {
+        background-color: #e6ee9c;
+        width: 100px;
+        margin: 10px;
+        padding: 8px;
+        flex-basis: 400px;
+        text-align: center;
+    }
+
+.categoryName {
+    color: #b48608;
+    font-family: 'Droid serif', serif;
+    font-size: 36px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 44px;
+    text-align: center;
+}
+
+
+.menuName {
+    color: #000;
+    font-family: 'Droid serif', serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 30px;
+    text-align: center;
+}
+
+.menuPrice {
+    color: #000;
+    font-size: 19px;
+    font-family: 'Original Surfer', cursive;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+}
+
+.menuDescription {
+    color: #333;
+    font-family: 'Original Surfer', cursive;
+    font-size: 16px;
+    padding: 3px;
+}
+
+/*menu Create goes here*/
+.createMenu h1 {
+    color: #ddaa44;
+    font-family: 'Architects Daughter',sans-serif;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 2px;
+    font-weight: bolder;
+    font-variant-caps: all-petite-caps;
+}
+
+.createMenu h2, label {
+    font-family: 'Original Surfer', cursive;
+    color: #FFF;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.createMenu > div > div {
+    width: 90%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.createMenu input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    resize: vertical;
+    border-bottom: 2px solid #b48608;
+}
+
+.createMenu label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.createMenu [type=text]:focus {
+    background-color: lightblue;
+}
+
+.createMenu select {
+    padding: 10px 16px;
+    border: none;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+.createMenu input[type=submit] {
+    padding: 12px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    resize: vertical;
+    border-bottom: 2px solid #b48608;
+}
+
+#btnBack {
+    padding: 10px;
+    color: white;
+    background-color: dimgrey;
+    font-weight: bold;
+    font-size: large;
+}
+
+.btnSaveDraft {
+    padding: 12px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-family: 'Original Surfer', cursive;
+    border-bottom: 2px solid #b48608;
+}
+
+.cartSystem {
+    position: absolute;
+    top: 10.5%;
+    right: 1px;
+    display: inline-block;
+    float: right;
+    border-left: 4px solid #280606;
+    border-bottom: 4px solid #280606;
+    width: 350px;
+    height: 99%;
+}
+
+.headCart {
+    color: #ddaa44;
+    font-family: 'Architects Daughter',sans-serif;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 2px;
+    font-weight: bolder;
+    font-variant-caps: all-petite-caps;
+}
+
+.btnLogin, .proceed_to_checkout {
+    position: relative;
+    float: right;
+    padding: 10px;
+    color: white;
+    background-color: dimgrey;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 20px;
+    margin-right: 13px;
+}
+
+
+#cart li {
+    padding-left: 2px;
+    /*padding-right: 40px;*/
+    list-style: none;
+    margin-left: auto;
+    font-family: 'Original Surfer', cursive;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+    #cart li span {
+        padding-left: 70px;
+    }
+
+#cart input {
+    background: #b48608;
+    width: 10%;
+    font-family: 'Original Surfer', cursive;
+    color: #FFF;
+    opacity: 1;
+    padding: 2px;
+    font-size: large;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.totalPrice {
+    font-family: 'Original Surfer', cursive;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+    .totalPrice span {
+        color: #b48608;
+        padding-right: 20px;
+    }

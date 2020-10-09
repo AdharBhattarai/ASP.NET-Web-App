@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ResturantWebApp.Models.OrderStatus>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="orderStatusContainer">
+    <h1>Order Status</h1>
+
+    <table class="orderStatus">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.User)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderTime)
+                </th>
+                <th>
+                    Item List
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderTime)
+                    </td>
+                    <td>
+                        @if (item.MenuOrders != null)
+                        {
+                            @foreach (var menu in item.MenuOrders)
+                            {
+                                <ul>
+                                    <li>Item Name:<span id="nameMenu"> @menu.Menu.Name</span></li>
+                                    <li>Price: $@menu.ItemPrice</li>
+                                    <li>Quantity: @menu.Quantity</li>
+                                    <li>Total Price: $@menu.TotalPrice</li>
+                                </ul>
+                            }
+                        }
+                    </td>
+                    @*<td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

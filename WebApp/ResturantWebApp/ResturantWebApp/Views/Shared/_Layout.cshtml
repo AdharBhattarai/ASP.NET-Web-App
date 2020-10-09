@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - the himalayan flames</title>
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/user.css" />
+    <link rel="stylesheet" href="~/css/menu.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
+    <link rel="stylesheet" href="~/css/category.css" />
+    <link rel="stylesheet" href="~/css/orderstatus.css" />
+
+
+
+
+
+</head>
+<body>
+    @{ResturantWebApp.Models.User usr = DAL.GetUserForCookie(Context.Request.Cookies["user"]);}
+
+    <nav class="navbar">
+        <span class="navbar-toggle">
+            <i id="js-navbar-toggle" class="fa fa-bars"></i>
+        </span>
+        <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">Himalayan Flames</a>
+
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a class="nav-links" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            @if (usr != null)
+            {
+                @if (usr.Role.CategoryIndex)
+                {
+                    <li>
+                        <a class="nav-links" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                    </li>
+                }
+                @if (usr.Role.OrderIndex)
+                {
+
+                    <li>
+                        <a class="nav-links" asp-area="" asp-controller="OrderStatus" asp-action="Index">Orders</a>
+                    </li>
+                }
+            }
+            <li>
+                <a class="nav-links" asp-area="" asp-controller="Menu" asp-action="Index">Menu</a>
+            </li>
+            @if (usr == null)
+            {
+                <li>
+                    <span id="iconSignIn">
+                        <a class="nav-links" asp-controller="User"
+                           asp-action="Login">Login</a>
+                    </span>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a id="signOut" class="nav-links" asp-action="Logout" asp-controller="User">Sign Out</a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="">
+
+            @RenderBody()
+        </main>
+    </div>
+    <div id="messages">
+        @if (TempData["Success"] != null)
+        {
+            <div class="badge-success success">@TempData["Success"]</div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert-warning error">@TempData["Error"]</div>
+        }
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
